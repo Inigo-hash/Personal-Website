@@ -110,3 +110,60 @@ body {
     line-height: 1.7;
 }
 
+/* ---------- SOCIAL BUTTONS ---------- */
+.social-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.social-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #3F4E4F;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    width: auto;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.social-btn:hover {
+    background-color: #A27B5C;
+    transform: translateY(-2px);
+}
+
+/* Specific colors for each platform */
+.social-btn.facebook {
+    background-color: #3b5998;
+}
+
+.social-btn.facebook:hover {
+    background-color: #8b9dc3;
+}
+
+.social-btn.twitter {
+    background-color: #1da1f2;
+}
+
+.social-btn.twitter:hover {
+    background-color: #1c95d4;
+}
+
+.social-btn.linkedin {
+    background-color: #0077b5;
+}
+
+.social-btn.linkedin:hover {
+    background-color: #005f8d;
+}
+
+.social-btn.github {
+    background-color: #333;
+}
+
+.social-btn.github:hover {
+    background-color: #6e5494;
+}
+
