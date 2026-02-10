@@ -21,6 +21,7 @@
 
 html {
     overflow-y: scroll;
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
 
@@ -94,6 +95,39 @@ hr {
     transform: translateY(-1px);
 }
 
+/* =========================
+   SECTION NAVIGATION BUTTONS
+========================= */
+.section-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 32px 0;
+    flex-wrap: wrap;
+}
+
+.section-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #3F4E4F;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+
+.section-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+.section-btn:focus {
+    outline: 2px solid #A27B5C;
+    outline-offset: 2px;
+}
+
 
 .childhood-row,
 .teenage-row,
@@ -131,7 +165,8 @@ hr {
     cursor: pointer;
     transition: opacity 0.3s ease, transform 0.3s ease;
     text-align: center;
-    margin: 16px auto;
+    margin: 16px 0;
+    text-decoration: none;
 }
 
 .back-to-top:hover {
@@ -140,5 +175,6 @@ hr {
 }
 
 .back-to-top:focus {
-    outline: none;
+    outline: 2px solid #3F4E4F;
+    outline-offset: 2px;
 }
