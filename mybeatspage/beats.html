@@ -217,23 +217,5 @@
         <a href="#_" class="lightbox-close">&times;</a>
         <img src="../images/musicartist/vanessa.jpg" alt="Vanessa Carlton">
     </div>
-
-    <script>
-        // Get all audio players
-        const audioPlayers = document.querySelectorAll('.audio-player');
-
-        // Add event listener to each player
-        audioPlayers.forEach(player => {
-            player.addEventListener('play', function() {
-                // Pause all other players when this one starts playing
-                audioPlayers.forEach(otherPlayer => {
-                    if (otherPlayer !== player) {
-                        otherPlayer.pause();
-                    }
-                });
-            });
-        });
-    </script>
-
 </body>
 </html>
