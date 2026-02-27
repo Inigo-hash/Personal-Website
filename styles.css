@@ -155,3 +155,15 @@ body {
     color: #A27B5C;
 }
 
+/* ---------- VIDEO SECTION ---------- */
+.video-section {
+    max-width: 800px;
+    margin-bottom: 60px;
+}
+
+.video-section video {
+    border-radius: 10px;
+    display: block;
+    border: 3px solid #3F4E4F;
+}
+
