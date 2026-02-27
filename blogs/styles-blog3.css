@@ -1,51 +1,53 @@
+/* ---------- FONTS ---------- */
 @font-face {
     font-family: 'Glacial Indifference';
-    src: url('fonts/GlacialIndifference-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('../fonts/GlacialIndifference-Regular.otf') format('opentype');
+    font-weight: 400;
 }
 
 @font-face {
     font-family: 'Glacial Indifference';
-    src: url('fonts/GlacialIndifference-Bold.otf') format('opentype');
-    font-weight: bold;
-    font-style: normal;
-}
-
-body {
-    background-color: #DCD7C9;
-    margin: 0;
-}
-
-p {
-    font-family: 'Glacial Indifference', Arial, sans-serif;
-    font-size: 18px;
-    text-align: justify;
-    text-indent: 36px;
-    margin-bottom: 1.2em;
-    line-height: 1.6;
-    color: #2C2C2C;
-}
-
-h2 {
-    font-family: 'Glacial Indifference', Arial, sans-serif;
-    color: #2C3639;
-    text-align: left;
-    clear: both;
+    src: url('../fonts/GlacialIndifference-Bold.otf') format('opentype');
+    font-weight: 700;
 }
 
 html {
     overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
-/* NAVBAR */
+/* ---------- BASE ---------- */
+body {
+    margin: 0;
+    font-family: 'Glacial Indifference', Arial, sans-serif;
+    background-color: #DCD7C9;
+    color: #2C2C2C;
+}
+
+p {
+    font-size: 18px;
+    text-align: justify;
+    text-indent: 36px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    color: #2C3639;
+    margin: 40px 0 20px 0;
+    clear: both;
+}
+
+/* ---------- NAVBAR ---------- */
 .navbar {
     background-color: #3F4E4F;
     padding: 20px;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 12px;
+    flex-wrap: wrap;
 }
 
 .navbar a {
@@ -63,36 +65,36 @@ html {
     transform: translateY(-1px);
 }
 
-/* CONTENT WRAPPER */
+/* ---------- CONTENT WRAPPER ---------- */
 .content-wrapper {
-    margin: 0 1in;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
-/* HEADER */
+/* ---------- PAGE HEADER ---------- */
 .page-header {
-    background-color: #DCD7C9;
-    padding: 60px 40px;
+    padding: 60px 0;
     text-align: center;
     border-bottom: 3px solid #A27B5C;
-    margin: 0 -40px;
+    margin-bottom: 40px;
 }
 
 .page-header h1 {
-    text-align: center;
     font-family: Georgia, serif;
-    margin: 0;
-    font-size: 2.5rem;
+    font-size: 48px;
     color: #2C3639;
+    margin: 0 0 10px 0;
 }
 
 .page-header .author {
     text-align: center;
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #2C3639;
+    font-size: 16px;
+    color: #3F4E4F;
+    margin: 0;
 }
 
-/* BLOG IMAGES */
+/* ---------- BLOG IMAGES ---------- */
 .blog-image-figure {
     float: right;
     margin: 0 0 20px 40px;
@@ -103,10 +105,10 @@ html {
     max-width: 220px;
     height: auto;
     border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 figcaption {
-    font-family: 'Glacial Indifference', Arial, sans-serif;
     font-size: 12px;
     color: #666;
     text-align: center;
@@ -123,15 +125,15 @@ figcaption a:hover {
     text-decoration: underline;
 }
 
-/* NAVIGATION BUTTONS */
+/* ---------- NAVIGATION BUTTONS ---------- */
 .nav-buttons {
     display: flex;
     justify-content: flex-start;
-    margin: 40px 0 40px 0;
+    margin: 40px 0;
+    clear: both;
 }
 
 .nav-btn {
-    font-family: 'Glacial Indifference', Arial, sans-serif;
     text-decoration: none;
     padding: 12px 24px;
     background-color: #A27B5C;
@@ -145,4 +147,79 @@ figcaption a:hover {
 .nav-btn:hover {
     opacity: 0.85;
     transform: translateY(-2px);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 0 20px;
+    }
+
+    .page-header h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .blog-image-figure {
+        float: none;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .blog-image {
+        max-width: 100%;
+    }
+}
+
+/* ---------- LIGHTBOX (CSS ONLY) ---------- */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox:target {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    animation: zoom 0.3s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0.8);}
+    to {transform: scale(1);}
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+    z-index: 1000;
+}
+
+.lightbox-close:hover {
+    color: #A27B5C;
 }

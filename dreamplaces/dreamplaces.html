@@ -10,52 +10,55 @@
 
     <!-- Navigation bar -->
     <nav class="navbar">
-        <a href="biography/biography.html">Biography</a>
-        <a href="blogs/blog1.html">Blog</a>
-        <a href="gallerydump/gallerydump.html">Gallery Dump</a>
-        <a href="mybeatspage/beats.html">My Beats</a>
-        <a href="mymovies/movies.html">My Film Movies</a>
-        <a href="mytvshows/tvshows.html">My Film TV Shows</a>
+        <a href="../index.html">Home</a>
+        <a href="../biography/biography.html">Biography</a>
+        <a href="../blogs/blog1.html">Blog</a>
+        <a href="../gallerydump/gallerydump.html">Gallery Dump</a>
+        <a href="../mybeatspage/beats.html">My Beats</a>
+        <a href="../mymovies/movies.html">My Film Movies</a>
+        <a href="../mytvshows/tvshows.html">My Film TV Shows</a>
         <a href="dreamplaces.html">Dream Places to Visit</a>
-        <a href="contact/contact.html">Contact</a>
+        <a href="../contact/contact.html">Contact</a>
     </nav>
 
-    <div style="text-align:center; margin-top:40px;">
-        <h1>Dream Places</h1>
+    <div class="dreamplaces-container">
+        <h1 class="page-title">Dream Places to Visit 🌍</h1>
+        <p class="page-subtitle">Click on each shape to explore my dream destinations</p>
 
         <!-- Image -->
-        <img src="../dreamplace.png" usemap="#dreammap" height="720" width="900">
+        <div class="image-container">
+            <img src="../images/dreamplaces/Dream Places.png" usemap="#dreammap" alt="Dream Places Map" height="900" width="1125">
+        </div>
 
-                <map name="dreammap">
+        <map name="dreammap">
 
-            
+            <!--HEXAGON - Top Left (Iceland)-->
             <area shape="poly"
-                coords="242, 32, 366, 79, 367, 173, 243, 220, 119, 173, 118, 78"
-                href="dreamplaceinfo.html"/>
+                coords="291, 78, 417, 131, 417, 236, 292, 290, 168, 237, 167, 130"
+                href="dreamplaceinfo.html#iceland" alt="Iceland" title="Iceland"/>
 
-            
+            <!--DIAMOND - Top Right (Norway)-->
             <area shape="poly"
-                coords="662, 27, 777, 124, 662, 223, 547, 125"
-                href="dreamplaceinfo.html" />
+                coords="876, 65, 1014, 191, 876, 314, 737, 191"
+                href="dreamplaceinfo.html#norway" alt="Norway" title="Norway"/>
 
-            
+            <!--CIRCLE - Middle (Switzerland)-->
             <area shape="circle"
-                coords="278,360,100"
-                href="dreamplaceinfo.html" />
+                coords="563,450,156"
+                href="dreamplaceinfo.html#switzerland" alt="Switzerland" title="Switzerland"/>
 
-            
+            <!--SQUARE - Bottom Left (Greenland)-->
             <area shape="rect"
-                coords="518,265,735,451"
-                href="dreamplaceinfo.html"/>
+                coords="87, 553,312,774"
+                href="dreamplaceinfo.html#greenland" alt="Greenland" title="Greenland"/>
 
-            
+            <!--PENTAGON - Bottom Right (Finland)-->
             <area shape="poly"
-                coords="453, 498, 561, 570, 521, 687, 387, 688, 346, 570"
-                href="dreamplaceinfo.html" />
+                coords="890, 566, 1021, 646, 972, 776, 808, 776, 759, 645"
+                href="dreamplaceinfo.html#finland" alt="Finland (Lapland)" title="Finland"/>
 
         </map>
     </div>
-
 
 </body>
 </html>

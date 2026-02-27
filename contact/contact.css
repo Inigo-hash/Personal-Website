@@ -167,3 +167,49 @@ body {
     background-color: #6e5494;
 }
 
+/* ---------- LIGHTBOX (CSS ONLY) ---------- */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox:target {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    animation: zoom 0.3s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0.8);}
+    to {transform: scale(1);}
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+    z-index: 1000;
+}
+
+.lightbox-close:hover {
+    color: #A27B5C;
+}
+

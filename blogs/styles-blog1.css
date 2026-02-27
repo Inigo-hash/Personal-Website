@@ -1,27 +1,30 @@
+/* ---------- FONTS ---------- */
 @font-face {
     font-family: 'Glacial Indifference';
-    src: url('fonts/GlacialIndifference-Regular.otf') format('opentype');
+    src: url('../fonts/GlacialIndifference-Regular.otf') format('opentype');
+    font-weight: 400;
 }
 
 @font-face {
     font-family: 'Glacial Indifference';
-    src: url('fonts/GlacialIndifference-Bold.otf') format('opentype');
-    font-weight: bold;
-}
-
-/* GLOBAL */
-body {
-    margin: 0;
-    background-color: #DCD7C9;
-    color: #2C2C2C;
-    font-family: 'Glacial Indifference', Arial, sans-serif;
+    src: url('../fonts/GlacialIndifference-Bold.otf') format('opentype');
+    font-weight: 700;
 }
 
 html {
     overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
-/* NAVBAR */
+/* ---------- BASE ---------- */
+body {
+    margin: 0;
+    font-family: 'Glacial Indifference', Arial, sans-serif;
+    background-color: #DCD7C9;
+    color: #2C2C2C;
+}
+
+/* ---------- NAVBAR ---------- */
 .navbar {
     background-color: #3F4E4F;
     padding: 20px;
@@ -34,8 +37,8 @@ html {
 .navbar a {
     color: #ffffff;
     text-decoration: none;
-    background-color: #A27B5C;
     padding: 8px 16px;
+    background-color: #A27B5C;
     border-radius: 20px;
     font-size: 18px;
     transition: transform 0.15s ease, opacity 0.15s ease;
@@ -46,34 +49,35 @@ html {
     transform: translateY(-1px);
 }
 
-/* CONTENT WRAPPER */
+/* ---------- CONTENT WRAPPER ---------- */
 .content-wrapper {
-    margin: 0 1in;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
-/* HEADER */
+/* ---------- PAGE HEADER ---------- */
 .page-header {
-    background-color: #DCD7C9;
-    padding: 60px 40px;
+    padding: 60px 0;
     text-align: center;
     border-bottom: 3px solid #A27B5C;
-    margin: 0 -40px 40px -40px;
+    margin-bottom: 40px;
 }
 
-h1 {
+.page-header h1 {
     font-family: Georgia, serif;
-    text-align: center;
+    font-size: 48px;
     color: #2C3639;
-    margin-bottom: 8px;
+    margin: 0 0 10px 0;
 }
 
-.author {
-    text-align: center;
+.page-header .author {
     font-size: 16px;
     color: #3F4E4F;
+    margin: 0;
 }
 
-/* BLOG TEXT */
+/* ---------- BLOG TEXT ---------- */
 .blog-text {
     font-size: 18px;
     text-align: justify;
@@ -82,23 +86,21 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* IMAGE FIGURE */
+/* ---------- IMAGE FIGURE ---------- */
 .image-figure {
     float: right;
     margin: 0 0 20px 40px;
 }
 
-/* BLOG IMAGE */
 .blog-image {
     display: block;
     max-width: 420px;
     height: auto;
     border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* FIGCAPTION */
 figcaption {
-    font-family: 'Glacial Indifference', Arial, sans-serif;
     font-size: 12px;
     color: #666;
     text-align: center;
@@ -115,15 +117,15 @@ figcaption a:hover {
     text-decoration: underline;
 }
 
-/* NAVIGATION BUTTONS */
+/* ---------- NAVIGATION BUTTONS ---------- */
 .nav-buttons {
     display: flex;
     justify-content: flex-end;
-    margin: 40px 0 40px 0;
+    margin: 40px 0;
+    clear: both;
 }
 
 .nav-btn {
-    font-family: 'Glacial Indifference', Arial, sans-serif;
     text-decoration: none;
     padding: 12px 24px;
     background-color: #A27B5C;
@@ -137,4 +139,75 @@ figcaption a:hover {
 .nav-btn:hover {
     opacity: 0.85;
     transform: translateY(-2px);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 0 20px;
+    }
+
+    .page-header h1 {
+        font-size: 36px;
+    }
+
+    .blog-text {
+        font-size: 16px;
+    }
+
+    .image-figure {
+        float: none;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .blog-image {
+        max-width: 100%;
+    }
+}
+
+/* ---------- LIGHTBOX (CSS ONLY) ---------- */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox:target {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    animation: zoom 0.3s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0.8);}
+    to {transform: scale(1);}
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+    z-index: 1000;
+}
+
+.lightbox-close:hover {
+    color: #A27B5C;
 }
