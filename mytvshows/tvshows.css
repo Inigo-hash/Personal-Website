@@ -146,9 +146,9 @@ body {
 
 /* ---------- VIDEO CONTAINER ---------- */
 .video-container {
-    margin-top: auto; /*pushes video to bottom */
+    margin-top: auto; 
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     background-color: #000;
