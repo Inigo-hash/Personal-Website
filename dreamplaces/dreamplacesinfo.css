@@ -117,10 +117,7 @@ body {
 }
 
 .badge {
-    background-color: #A27B5C;
-    color: #ffffff;
-    padding: 8px 20px;
-    border-radius: 20px;
+    color: #2C3639;
     font-size: 14px;
     font-weight: 700;
 }
